@@ -1,0 +1,14 @@
+digraph G {
+node [shape=box];
+"body" [label="body"];
+"head" [label="head"];
+"wheel_left" [label="wheel_left"];
+"wheel_right" [label="wheel_right"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"body" -> "body_to_head" [label="xyz: 0.075 0 0.04 \nrpy: 0 -0 0"]
+"body_to_head" -> "head"
+"body" -> "body_to_left_wheel" [label="xyz: 0 0.06 0.04 \nrpy: 1.57075 -0 0"]
+"body_to_left_wheel" -> "wheel_left"
+"body" -> "body_to_right_wheel" [label="xyz: 0 -0.06 0.04 \nrpy: 1.57075 -0 0"]
+"body_to_right_wheel" -> "wheel_right"
+}
