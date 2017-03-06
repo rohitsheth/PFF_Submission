@@ -1,7 +1,9 @@
 # PFF_Submission
 
 inside package pff_rohit
-	urdf/diff_drive.urdf contains the urdf file for the robot. 
+
+	urdf/diff_drive.urdf contains the urdf file for the robot.
+ 
 	urdf/diff_drive_robot.pdf contains the link diagram for the robot.
 
 	launch/diff_drive.launch conatins launch configuration file to open diff_drive.urdf using rviz
@@ -20,4 +22,4 @@ to view the robot in rviz,
 
 Diff_drive_robot.png shows how the robot will look inside rviz
 
-* NOTE:  Currently working on Question 6. Above is the working till question 5. *
+* NOTE:  Currently working on Question 6. Above is the working till question 5. 
