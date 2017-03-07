@@ -24,6 +24,7 @@ To view the robot in rviz,
 
 
 To view the robot in gazebo,
+
 	ros_launch pff_rohit diff_drive_gazebo.launch
 
 To drive the robot in gazebo, after launching the robot using the above command, in a new terminal
