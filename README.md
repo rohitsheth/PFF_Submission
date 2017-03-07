@@ -21,6 +21,10 @@ To view the robot in rviz,
 	Go to 'Add' option and click on 'Robot Model'
 	Zoom in to view the robot (size kept small so as to work on question 6)
 
+
+To view the robot in gazebo,
+	ros_launch pff_rohit diff_drive_gazebo.launch
+
 Diff_drive_robot.png shows how the robot will look inside rviz
 
 ![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/Diff_drive_robot.png)
