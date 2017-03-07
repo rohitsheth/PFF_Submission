@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pff_rohit)/worlds/diff_drive_plane.world"/>
+  </include>
+
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find pff_rohit)urdf/diff_drive.urdf -urdf -z 1 -model diff_drive_robot" />
+
+</launch>
