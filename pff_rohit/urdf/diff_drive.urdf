@@ -6,7 +6,7 @@
     <geometry>
       <box size="0.1 0.1 0.05"/>
     </geometry>
-    <origin rpy="0 0 0" xyz="0 0 0.04"/>
+    <origin rpy="0 0 0" xyz="0 0 0.02"/>
     <material name="white">
       <color rgba="1 1 1 1"/>
     </material>
@@ -44,7 +44,7 @@
   </collision>
 
         <inertial>
-                <origin xyz="0 0 0.04" />
+                <origin xyz="0 0 0.02" />
                 <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         <mass value="5"/>
         </inertial>
@@ -101,10 +101,10 @@
 <joint name="body_to_left_wheel" type="continuous">
   <parent link="body"/>
   <child link="wheel_left"/>
-  <origin xyz="0 0.06 0.04" rpy="1.57075 0 0" />
-  <axis xyz="0 1 0" />
+  <origin xyz="0 0.06 0.02" rpy="1.57075 0 0" />
+  <axis xyz="0 0 -1" />
   <limit effort="100" velocity="100"/>
-  <joint_properties damping="0.0" friction="0.0"/>
+  <joint_properties damping="0.0" friction="0.2"/>
 </joint>
 
 <transmission name="body_to_left_wheel_joint_trans">
@@ -112,7 +112,7 @@
     <joint name="body_to_left_wheel"/>
     <actuator name="body_to_left_wheel_joint_motor">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>0.5</mechanicalReduction>
     </actuator>
 </transmission>
 
@@ -120,10 +120,10 @@
 <joint name="body_to_right_wheel" type="continuous">
   <parent link="body"/>
   <child link="wheel_right"/>
-  <origin xyz="0 -0.06 0.04" rpy="1.57075 0 0" />
-  <axis xyz="0 -1 0" />
+  <origin xyz="0 -0.06 0.02" rpy="1.57075 0 0" />
+  <axis xyz="0 0 -1" />
   <limit effort="100" velocity="100"/>
-  <joint_properties damping="0.0" friction="0.0"/>
+  <joint_properties damping="0.0" friction="0.2"/>
 </joint>
 
 
@@ -132,14 +132,14 @@
     <joint name="body_to_right_wheel"/>
     <actuator name="body_to_right_wheel_joint_motor">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>0.5</mechanicalReduction>
     </actuator>
 </transmission>
 
 <joint name="body_to_head" type="fixed">
   <parent link="body"/>
   <child link="head"/>
-  <origin xyz="0.075 0 0.04" rpy="0 0 0" />
+  <origin xyz="0.075 0 0.02" rpy="0 0 0" />
 </joint>
 
   <!-- Differential drive controller  -->
