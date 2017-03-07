@@ -22,8 +22,8 @@
 
 	<inertial>
 		<origin xyz="0 0 0.02" />
-		<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-	<mass value="10"/>
+		<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="-0.05"/>
+	<mass value="5"/>
 	</inertial>
 
 </link>
@@ -47,7 +47,7 @@
         <inertial>
 		<origin xyz="0.075 0 0.02" rpy="0 0 0" />
                 <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        <mass value="1"/>
+        <mass value="2"/>
         </inertial>
 </link>
 
@@ -68,7 +68,7 @@
   </collision>
 
 	<inertial>
-	      <mass value="3"/>
+	      <mass value="6"/>
 	      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.04"/>
 	</inertial>
 
@@ -91,13 +91,75 @@
   </collision>
 
 	<inertial>
-	      <mass value="3"/>
+	      <mass value="6"/>
 	      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.04"/>
 	</inertial>
 
 </link>
 
+  <link name="caster_wheel_f">
 
+    <visual>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+   </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+
+</link>
+
+ <joint name="caster_front_joint" type="fixed">
+    <parent link="head"/>
+    <child link="caster_wheel_f"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.02"/>
+  <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+<link name="caster_wheel_b">
+
+    <visual>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+   </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="4"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+
+</link>
+
+ <joint name="caster_back_joint" type="fixed">
+    <parent link="body"/>
+    <child link="caster_wheel_b"/>
+    <origin rpy="0 0 0" xyz="-0.02 0.0 -0.01"/>
+  <joint_properties damping="0.0" friction="0.0"/>
+</joint>
 
 <joint name="body_to_left_wheel" type="continuous">
   <parent link="body"/>

@@ -19,7 +19,7 @@ public:
   bool driveKeyboard()
   {
     std::cout << "Type a command and then press enter.  "
-      "Use 'w' to move forward, 'a' to turn left, "
+      "Use 'w' to move forward, 'a' to turn left, 's' to stop	"
       "'d' to turn right, 'q' to exit.\n";
 
     //sending commands of type "twist"
@@ -29,9 +29,9 @@ public:
     while(ros::ok()){
 
       std::cin >> cmd ;
-      if(cmd!='w' && cmd!='a' && cmd!='d' && cmd!='q')
+      if(cmd!='w' && cmd!='a' && cmd!='d' && cmd!='q' && cmd!='s')
       {
-        ROS_INFO("wrong Key \n");
+        ROS_INFO("wrong Key! Press q to quit. Press s to stop \n");
         continue;
       }
 
@@ -43,12 +43,19 @@ public:
       //turn left 
       else if(cmd=='d'){
         base_cmd.angular.z = 0.75;
-        // base_cmd.linear.x = 0.25;
       }
       //turn right
       else if(cmd=='a'){
         base_cmd.angular.z = -0.75;
-        //  base_cmd.linear.x = 0.25;
+      }
+      //stop
+      else if(cmd=='s'){
+        base_cmd.linear.x = 0.0;
+        base_cmd.linear.y = 0.0;
+        base_cmd.linear.z = 0.0;
+        base_cmd.angular.x = 0;
+        base_cmd.angular.y = 0;
+        base_cmd.angular.z = 0;
       }
       //quit
       else if(cmd=='q'){
