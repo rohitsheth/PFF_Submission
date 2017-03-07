@@ -13,7 +13,7 @@ public:
   Diff_Drive(ros::NodeHandle &nh)
   {
     nh_ = nh;
-    cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/keypad_controller/cmd_vel", 1);
+    cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
   }
 
   bool driveKeyboard()
@@ -41,12 +41,12 @@ public:
         base_cmd.linear.x = 0.25;
       }
       //turn left 
-      else if(cmd=='a'){
+      else if(cmd=='d'){
         base_cmd.angular.z = 0.75;
         // base_cmd.linear.x = 0.25;
       }
       //turn right
-      else if(cmd=='d'){
+      else if(cmd=='a'){
         base_cmd.angular.z = -0.75;
         //  base_cmd.linear.x = 0.25;
       }
