@@ -24,17 +24,18 @@ To view the robot in rviz,
 
 
 To view the robot in gazebo,
+
 	ros_launch pff_rohit diff_drive_gazebo.launch
 
 To drive the robot in gazebo, after launching the robot using the above command, in a new terminal
 	
 	rosrun pff_rohit pff_rohit
-	'''
+	```
 	'w' to drive straight
 	'a' to turn left
 	'd' to turn right
 	'q' to quit
-	'''
+	```
 Diff_drive_robot.png shows how the robot will look inside rviz
 
 ![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/Diff_drive_robot.png)
