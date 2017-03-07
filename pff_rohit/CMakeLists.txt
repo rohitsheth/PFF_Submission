@@ -8,6 +8,10 @@ project(pff_rohit)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  geometry_msgs
+  rviz
+  tf
+  urdf
   gazebo_ros
   roscpp
   rospy
