@@ -244,8 +244,8 @@
 			<wheelSeparation>0.1</wheelSeparation>
 			<wheelDiameter>0.08</wheelDiameter>
 			<broadcastTF>1</broadcastTF>
-			<wheelTorque>50</wheelTorque>
-			<wheelAcceleration>1</wheelAcceleration>
+			<wheelTorque>200</wheelTorque>
+			<wheelAcceleration>1.8</wheelAcceleration>
 			<commandTopic>cmd_vel</commandTopic>
 			<odometryFrame>odom</odometryFrame>
 			<odometryTopic>odom</odometryTopic>

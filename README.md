@@ -1,6 +1,14 @@
 # PFF_Submission
-* NOTE:  Work completed upto question 6.1
-
+* NOTE:  Work completed upto question 6 Teleop Part
+* Get user input from cin ( keypress similar to gaming can be done in a longer code)
+* Pubs /cmd_vel topic to move
+* 
+*
+* Drawing a square is executed as starting from a vertex, following a side till a dist of
+* side-length is reached from initial vertex, turning 90 degrees, making current vertex as 
+* base vertex and repeating.
+* Subs /odom topic to get current pose data of the robot.
+* Pubs /cmd_vel topic to move
 
 Inside package pff_rohit
 
