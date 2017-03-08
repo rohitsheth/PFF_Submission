@@ -1,6 +1,5 @@
 # PFF_Submission
-* NOTE:  Currently working on Question 6. Below is the working till question 5. 
-* NOTE: Robot drives using the keyoard, though it is osciallating as I forgot to add the caster wheel.
+* NOTE:  Work completed upto question 6.1
 
 
 Inside package pff_rohit
@@ -11,10 +10,15 @@ Inside package pff_rohit
 	launch/diff_drive.launch conatins launch configuration file to open diff_drive.urdf using rviz
 
 To view the robot in rviz,
-	download the package inside workspace folder
-	run the following commands in terminal:
+	download the package
 
-	source devel/setup.bash
+	add the following to ~/.bashrc
+
+	source /opt/ros/kinetic/setup.bash
+	export GAZEBO_MODEL_PATH=/home/user/PFF_Submission/src/
+	(GAZEBO_MODEL_PATH refers to the location of workspace where you've kept the package)
+	In terminal run the following:
+
 	catkin_make
 	roslaunch pff_rohit diff_drive.launch
 
@@ -36,6 +40,15 @@ To drive the robot in gazebo, after launching the robot using the above command,
 	'd' to turn right
 	'q' to quit
 	```
-Diff_drive_robot.png shows how the robot will look inside rviz
+robot_in_rviz.png shows how the robot will look inside rviz
 
-![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/Diff_drive_robot.png)
+![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/robot_in_rviz.png)
+
+
+robot_in_gazebo.png shows how the robot in gazebo with empty world and a sun
+
+![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/robot_in_gazebo.png)
+
+
+Keypad_to_teleop.png shows update in cmd_vel topic when pressed different keys to drive the robot
+![alt tag] (https://github.com/rohitsheth/PFF_Submission/blob/master/Keypad_to_teleop.png)
